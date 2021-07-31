@@ -21,19 +21,19 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () =>
       import('./signup/signup.module').then((m) => m.SignupPageModule),
-  },  {
-    path: 'aptitudetest',
-    loadChildren: () => import('./aptitudetest/aptitudetest.module').then( m => m.AptitudetestPageModule)
   },
   {
     path: 'result-university',
-    loadChildren: () => import('./result-university/result-university.module').then( m => m.ResultUniversityPageModule)
+    loadChildren: () =>
+      import('./result-university/result-university.module').then(
+        (m) => m.ResultUniversityPageModule
+      ),
   },
   {
     path: 'test',
-    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+    loadChildren: () =>
+      import('./test/test.module').then((m) => m.TestPageModule),
   },
-
 ];
 
 @NgModule({

@@ -12,10 +12,18 @@
     cuenta
   </h1>
   <form id="form">
-    <app-input placeholder="Nombre"></app-input>
-    <app-input placeholder="Correo Electronico"></app-input>
-    <app-input type="password" placeholder="Contraseña"></app-input>
-    <ion-button expand="block" shape="round">
+    <ion-input type="text" placeholder="Nombre" id="name"></ion-input>
+    <ion-input
+      type="email"
+      placeholder="Correo Electronico"
+      id="email"
+    ></ion-input>
+    <ion-input
+      type="password"
+      placeholder="Contraseña"
+      id="password"
+    ></ion-input>
+    <ion-button (click)="register()" expand="block" shape="round">
       Registarse
     </ion-button>
   </form>
