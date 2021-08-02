@@ -14,32 +14,10 @@
       una serie de preguntas con la mayor sinceridad.
       <strong>No importa el resultado elige lo que te hace feliz!</strong>
     </ion-label>
+    <ion-label>{{username}}</ion-label>
     <ion-button routerLink="/test" expand="block" size="large">
       <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
       Iniciar Test
     </ion-button>
   </div>
 </ion-content>
-<ion-menu contentId="main" menuId="main-menu" side="start" type="overlay">
-  <ion-content>
-    <div class="menu-header-bg"></div>
-    <div class="header-content">
-      <img src="../assets/eduSmartLogo.jpeg" alt="" />
-      <ion-label>
-        <h2>{{ username }}</h2>
-        <p>Bienvenido</p>
-      </ion-label>
-    </div>
-    <ion-list class="menu-items" lines="none">
-      <ion-item class="active">
-        <ion-icon name="clipboard-outline"></ion-icon>
-        Mi resultado
-      </ion-item>
-      <ion-item>
-        <ion-icon name="school-outline"></ion-icon>
-        Universidades
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-<ion-router-outlet id="main"></ion-router-outlet>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { LoginuserService } from '../service/loginuser.service';
+import { NameuserService } from '../service/nameuser.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
   constructor(
     private loginService: LoginuserService,
     public alertController: AlertController,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private userService: NameuserService
   ) {}
 
   ngOnInit() {}
@@ -32,7 +34,11 @@ export class LoginPage implements OnInit {
 
     await this.loginService.loginUser(loginUser).subscribe((r) => {
       this.loginData = r;
+      console.log(this.loginData);
+
       if (this.loginData.data.status === 'ok') {
+        this.userService.setUserName(this.loginData.data.username);
+
         this.navCtrl.navigateForward(`/home/${this.loginData.data.username}`);
       } else {
         this.message = 'Usuario o Contraseña Incorrectos';

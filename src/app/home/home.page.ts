@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NameuserService } from '../service/nameuser.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage implements OnInit {
   username: string;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private userService: NameuserService
+  ) {}
   ngOnInit() {
     this.username = this.route.snapshot.paramMap.get('username');
   }

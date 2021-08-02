@@ -1,3 +1,41 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu
+    contentId="main"
+    menuId="main-menu"
+    side="start"
+    type="overlay"
+    (ionWillOpen)="getUserData()"
+  >
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../assets/eduSmartLogo.jpeg" alt="" />
+        <ion-label>
+          <h2>{{ nombre }}</h2>
+          <p>Bienvenido</p>
+        </ion-label>
+      </div>
+      <ion-list class="menu-items" lines="none">
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="clipboard-outline"></ion-icon>
+            Mi resultado
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="school-outline"></ion-icon>
+            Universidades
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/login">
+            <ion-icon name="log-out-outline"></ion-icon>
+            Salir
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
