@@ -12,9 +12,7 @@ export class ResultUniversityPage implements OnInit {
 
   ngOnInit() {
     this.data = JSON.parse(this.route.snapshot.paramMap.get('data'));
-    for(let i of this.data){
-      console.log(i.nombreU);
-    }
+
   }
 
 }

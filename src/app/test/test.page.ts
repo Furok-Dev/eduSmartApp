@@ -20,7 +20,8 @@ let areaDB = '';
 export class TestPage implements OnInit {
   constructor(private questionsService: QuestionsService, private universitiesService: GetResultService, private navCtrl: NavController) { }
   data: any;
-  resultData: any;
+  dataDB: any;
+  resultData: Array<any> = [];
   //arte y creatividad
   p4: any;
   p9: any;
@@ -215,8 +216,10 @@ export class TestPage implements OnInit {
     };
 
     await this.universitiesService.getUniversityes(qUniversity).subscribe((r) => {
-      this.resultData = r;
-      this.navCtrl.navigateForward(`/result-university/${JSON.stringify(this.resultData.data)}`);
+      this.dataDB=r;
+      this.resultData.push(this.dataDB.data);
+      this.resultData.push(areaDB);
+      this.navCtrl.navigateForward(`/result-university/${JSON.stringify(this.resultData)}`);
     });
 
   }
