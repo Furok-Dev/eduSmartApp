@@ -33,7 +33,15 @@ const routes: Routes = [
     path: 'test',
     loadChildren: () =>
       import('./test/test.module').then((m) => m.TestPageModule),
+  },  {
+    path: 'universityresult',
+    loadChildren: () => import('./universityresult/universityresult.module').then( m => m.UniversityresultPageModule)
   },
+  {
+    path: 'myresult',
+    loadChildren: () => import('./myresult/myresult.module').then( m => m.MyresultPageModule)
+  },
+
 ];
 
 @NgModule({
