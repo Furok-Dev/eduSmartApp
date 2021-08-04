@@ -10,6 +10,53 @@ const area2 = 'ciencias sociales';
 const area3 = 'económica,administrativa y financiera';
 const area4 = 'ciencia y tecnología';
 const area5 = 'ciencias ecológicas,biológicas y de salud';
+
+// carreras segun el area
+
+const arteCreatividad = [
+  'Arquitectura Moda y Diseño',
+  'Publicidad, Marketing y RRPP',
+  'Arte y Bellas Artes',
+  'Imagen y Sonido',
+];
+const cienciasSociales = [
+  'Ciencias Sociales y Humanidades',
+  'Comunicación, Periodismo, Cs de la Información',
+  'Derecho y Leyes',
+  'Educación',
+  'Psicología y Ciencias del Comportamiento',
+  'Hotelería, Gastronomía y Turismo',
+  'Idiomas',
+  'Recursos Humanos y Riesgo Laboral',
+  'Ciencias Políticas',
+  'Lengua y Literatura',
+  'Historia y Geografía',
+];
+const economiaAdministracion = [
+  'Administración y Administración Pública',
+  'Contabilidad',
+  'Matemática, Economía y Finanzas',
+  'Comercio y Relaciones Internacionales',
+];
+const cienciaTecnologia = [
+  'Física y Química',
+  'Ingeniería y Tecnología',
+  'Electrónica y Electricidad',
+  'Informática e Información',
+  'Transporte y Logística',
+  'Bibliotecología y Archivología',
+];
+const cienciasEcologicas = [
+  'Ciencias Agrarias',
+  'Medio Ambiente y Geología',
+  'Salud y Medicina',
+  'Veterinaria',
+  'Nutrición y Alimentación',
+  'Ciencias Biológicas',
+  'Deportes y Educación Física',
+  'Seguridad, Criminología y Estudios Forenses',
+];
+
 let areaDB = '';
 
 @Component({
@@ -22,6 +69,7 @@ export class TestPage implements OnInit {
   data: any;
   dataDB: any;
   resultData: Array<any> = [];
+  dataCareers: any;
   //arte y creatividad
   p4: any;
   p9: any;
@@ -198,27 +246,33 @@ export class TestPage implements OnInit {
     const areaFinal = Math.max(this.acuArea1, this.acuArea2, this.acuArea3, this.acuArea4, this.acuArea5);
     if (this.acuArea1 === areaFinal) {
       areaDB = area1;
+      this.dataCareers = arteCreatividad;
     }
     if (this.acuArea2 === areaFinal) {
       areaDB = area2;
+      this.dataCareers = cienciasSociales;
     }
     if (this.acuArea3 === areaFinal) {
       areaDB = area3;
+      this.dataCareers = economiaAdministracion;
     }
     if (this.acuArea4 === areaFinal) {
       areaDB = area4;
+      this.dataCareers = cienciaTecnologia;
     }
     if (this.acuArea5 === areaFinal) {
       areaDB = area5;
+      this.dataCareers = cienciasEcologicas;
     }
     const qUniversity = {
       q: areaDB
     };
 
     await this.universitiesService.getUniversityes(qUniversity).subscribe((r) => {
-      this.dataDB=r;
+      this.dataDB = r;
       this.resultData.push(this.dataDB.data);
       this.resultData.push(areaDB);
+      this.resultData.push(this.dataCareers);
       this.navCtrl.navigateForward(`/result-university/${JSON.stringify(this.resultData)}`);
     });
 
