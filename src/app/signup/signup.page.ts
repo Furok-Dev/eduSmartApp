@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RegisteruserService } from '../service/registeruser.service';
 import { AlertController, NavController } from '@ionic/angular';
 
@@ -7,10 +7,10 @@ import { AlertController, NavController } from '@ionic/angular';
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
 })
-export class SignupPage implements OnInit {
+export class SignupPage {
   user: any;
   email: any;
-  password: any;
+  pass: any;
   isRegister: any;
   message: string;
 
@@ -18,19 +18,18 @@ export class SignupPage implements OnInit {
     private userService: RegisteruserService,
     public alertController: AlertController,
     private navCtrl: NavController
-  ) {}
+  ) { }
 
-  ngOnInit() {}
 
   async register() {
     this.user = document.getElementById('name');
-    this.email = document.getElementById('email');
-    this.password = document.getElementById('password');
+    this.email = document.getElementById('correo');
+    this.pass = document.getElementById('pass');
 
     const user = {
       name: this.user.value,
       email: this.email.value,
-      password: this.password.value,
+      password: this.pass.value,
     };
 
     await this.userService.registerNewUser(user).subscribe((r) => {

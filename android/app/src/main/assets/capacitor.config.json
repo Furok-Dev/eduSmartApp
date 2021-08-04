@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "eduSmartApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

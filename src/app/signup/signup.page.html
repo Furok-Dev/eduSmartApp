@@ -1,34 +1,25 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>
-    Crea tu <br />
-    cuenta
-  </h1>
-  <form id="form">
-    <ion-input type="text" placeholder="Nombre" id="name"></ion-input>
-    <ion-input
-      type="email"
-      placeholder="Correo Electronico"
-      id="email"
-    ></ion-input>
-    <ion-input
-      type="password"
-      placeholder="Contraseña"
-      id="password"
-    ></ion-input>
-    <ion-button (click)="register()" expand="block" shape="round">
-      Registarse
-    </ion-button>
-  </form>
-  <p>
-    ¿Ya tienes una cuenta?
-    <strong routerLink="/login" color="primary">Inicia Sesión.</strong>
-  </p>
+    <h1>
+        Crea tu <br /> cuenta
+    </h1>
+    <form id="form">
+        <ion-input type="text" placeholder="Nombre" id="name"></ion-input>
+        <ion-input type="email" placeholder="Correo Electronico" id="correo"></ion-input>
+        <ion-input type="password" placeholder="Contraseña" id="pass"></ion-input>
+        <ion-button (click)="register()" expand="block" shape="round">
+            Registarse
+        </ion-button>
+    </form>
+    <p>
+        ¿Ya tienes una cuenta?
+        <strong routerLink="/login" color="primary">Inicia Sesión.</strong>
+    </p>
 </ion-content>

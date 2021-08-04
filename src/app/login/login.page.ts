@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { LoginuserService } from '../service/loginuser.service';
 import { NameuserService } from '../service/nameuser.service';
@@ -8,20 +8,19 @@ import { NameuserService } from '../service/nameuser.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+
   email: any;
   password: any;
   loginData: any;
   message: string;
-
   constructor(
     private loginService: LoginuserService,
     public alertController: AlertController,
     private navCtrl: NavController,
     private userService: NameuserService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
 
   async loginUser() {
     this.email = document.getElementById('email');
@@ -34,7 +33,6 @@ export class LoginPage implements OnInit {
 
     await this.loginService.loginUser(loginUser).subscribe((r) => {
       this.loginData = r;
-      console.log(this.loginData);
 
       if (this.loginData.data.status === 'ok') {
         this.userService.setUserName(this.loginData.data.username);

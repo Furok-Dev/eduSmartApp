@@ -1,25 +1,21 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar> </ion-toolbar>
+    <ion-toolbar> </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="header">
-    <h1>Bienvenido</h1>
-    <img src="assets/eduSmartLogo.jpeg" alt="Logo de eduSmart" />
-  </div>
-  <form id="form">
-    <ion-input placeholder="Correo Electronico" id="email"></ion-input>
-    <ion-input
-      type="password"
-      placeholder="Contraseña"
-      id="password"
-    ></ion-input>
-    <ion-button (click)="loginUser()" expand="block" shape="round">
-      Iniciar Sesion
-    </ion-button>
-  </form>
-  <p>
-    ¿Aun no tienes una cuenta?
-    <strong routerLink="/signup" color="primary"> Regístrate.</strong>
-  </p>
+    <div id="header">
+        <h1>Bienvenido</h1>
+        <img src="assets/eduSmartLogo.jpeg" alt="Logo de eduSmart" />
+    </div>
+    <form id="form">
+        <ion-input type="text" placeholder="Correo Electronico" id="email" required></ion-input>
+        <ion-input type="password" placeholder="Contraseña" id="password" required></ion-input>
+        <ion-button (click)='loginUser()' expand="block" shape="round">
+            Iniciar Sesion
+        </ion-button>
+    </form>
+    <p>
+        ¿Aun no tienes una cuenta?
+        <strong routerLink="/signup" color="primary"> Regístrate.</strong>
+    </p>
 </ion-content>
