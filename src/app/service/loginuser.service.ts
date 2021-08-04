@@ -7,6 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class LoginuserService {
   constructor(public http: HttpClient) {}
   loginUser(user) {
-    return this.http.post('http://localhost:3000/api/user/login', user);
+    return this.http.post('https://edusmartapi.herokuapp.com/api/user/login', user);
   }
 }

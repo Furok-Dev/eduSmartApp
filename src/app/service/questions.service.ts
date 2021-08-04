@@ -9,6 +9,6 @@ export class QuestionsService {
   constructor(public http: HttpClient) {}
 
   getQuestions() {
-    return this.http.get<any>('http://localhost:3000/api/questions');
+    return this.http.get<any>('https://edusmartapi.herokuapp.com/api/questions');
   }
 }

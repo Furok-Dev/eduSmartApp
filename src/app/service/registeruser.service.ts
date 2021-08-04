@@ -8,6 +8,6 @@ export class RegisteruserService {
   constructor(public http: HttpClient) {}
 
   registerNewUser(user) {
-    return this.http.post('http://localhost:3000/api/user', user);
+    return this.http.post('https://edusmartapi.herokuapp.com/api/user', user);
   }
 }
