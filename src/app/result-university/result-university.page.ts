@@ -8,13 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultUniversityPage implements OnInit {
   data: any;
-  constructor(private route: ActivatedRoute) { }
+  isDataLoaded: boolean;
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.data = JSON.parse(this.route.snapshot.paramMap.get('data'));
-    for(let i of this.data){
-      console.log(i.nombreU);
-    }
-  }
+    this.isDataLoaded = Object.keys(this.data).length < 1;
+    console.log(this.isDataLoaded);
 
+    // for (let i of this.data) {
+    //   console.log(i.nombreU);
+    // }
+  }
 }

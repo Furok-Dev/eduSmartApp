@@ -1,15 +1,21 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Tú Resultado</ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Tú Resultado</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-list>
-        <ion-item *ngFor="let d of data">
-            <ion-label>
-                <h3>{{ d.nombreU }}</h3>
-            </ion-label>
-        </ion-item>
-    </ion-list>
+  <div *ngif="isDataLoaded">
+    <ion-label>Aun no tienes resultados</ion-label>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let d of data">
+      <ion-label>
+        <h3>{{ d.nombreU }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
