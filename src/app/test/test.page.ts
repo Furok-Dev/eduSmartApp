@@ -273,6 +273,7 @@ export class TestPage implements OnInit {
       this.resultData.push(this.dataDB.data);
       this.resultData.push(areaDB);
       this.resultData.push(this.dataCareers);
+      localStorage.setItem(`datosTest`, JSON.stringify(this.resultData));
       this.navCtrl.navigateForward(`/result-university/${JSON.stringify(this.resultData)}`);
     });
 

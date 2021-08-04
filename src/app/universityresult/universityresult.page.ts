@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniversityresultPage implements OnInit {
 
+  dataUniversity: any;
   constructor() { }
 
   ngOnInit() {
+    this.dataUniversity = JSON.parse(localStorage.getItem(`datosTest`));
+
   }
 
 }
