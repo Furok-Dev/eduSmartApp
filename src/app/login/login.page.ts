@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
       if (this.loginData.data.status === 'ok') {
         this.userService.setUserName(this.loginData.data.username);
 
-        this.navCtrl.navigateForward(`/home/${this.loginData.data.username}`);
+        this.navCtrl.navigateForward(`/home`);
       } else {
         this.message = 'Usuario o Contraseña Incorrectos';
         this.loginError(this.message);

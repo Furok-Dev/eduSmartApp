@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-result-university',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result-university.page.scss'],
 })
 export class ResultUniversityPage implements OnInit {
-
-  constructor() { }
+  data: any;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.data = JSON.parse(this.route.snapshot.paramMap.get('data'));
+    for(let i of this.data){
+      console.log(i.nombreU);
+    }
   }
 
 }

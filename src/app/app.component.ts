@@ -17,6 +17,5 @@ export class AppComponent implements OnInit {
 
   getUserData() {
     this.nombre = this.userService.getUserName();
-    console.log('hola' + this.nombre);
   }
 }
