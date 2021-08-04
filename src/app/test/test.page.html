@@ -1,31 +1,32 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Test de Aptitud</ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Test de Aptitud</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let questions of data">
-        <ion-card-header>
-            <ion-card-title>{{questions.pregunta}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            <ion-list>
-                <ion-list>
-                    <ion-radio-group name="auto" id="{{questions.numPregunta}}">
-                        <ion-item>
-                            <ion-label>Me interesa</ion-label>
-                            <ion-radio value="MeInteresa"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                            <ion-label>No me interesa</ion-label>
-                            <ion-radio value="noMeInteresa"></ion-radio>
-                        </ion-item>
-                    </ion-radio-group>
-                </ion-list>
-            </ion-list>
-        </ion-card-content>
-    </ion-card>
-    <ion-button expand="block" shape="round" (click)="getTest()"> Enviar Test </ion-button>
-
+  <ion-card *ngFor="let questions of data">
+    <ion-card-header>
+      <ion-card-title>{{questions.pregunta}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-list>
+          <ion-radio-group name="auto" id="{{questions.numPregunta}}">
+            <ion-item>
+              <ion-label>Me interesa</ion-label>
+              <ion-radio value="MeInteresa"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>No me interesa</ion-label>
+              <ion-radio value="noMeInteresa"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" shape="round" (click)="getTest()">
+    Enviar Test
+  </ion-button>
 </ion-content>

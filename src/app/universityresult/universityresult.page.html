@@ -1,26 +1,30 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Universidades</ion-title>
-        <ion-buttons slot="start">
-            <ion-menu-button menu="main-menu"></ion-menu-button>
-        </ion-buttons>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Universidades</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="card__universidad">
-        <ion-card-header>
-            <ion-card-subtitle>Puedes entrar tu carrera en las siguientes universidades
-            </ion-card-subtitle>
-        </ion-card-header>
-        <ion-list>
-            <ion-item *ngFor="let d of dataUniversity[0]">
-                <ion-label>
-                    <h3>
-                        {{ d.nombreU.replace('Carreras Universitarias en la ', '') }}
-                    </h3>
-                </ion-label>
-            </ion-item>
-        </ion-list>
-    </ion-card>
+  <ion-card class="card__universidad">
+    <ion-card-header>
+      <ion-card-subtitle>
+        Puedes encontrar tu carrera en las siguientes universidades
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let d of dataUniversity[0]">
+          <ion-label>
+            <h2>
+              {{ d.nombreU.replace('Carreras Universitarias en la ',
+              '').replace('Carreras Universitarias en ','') }}
+            </h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
