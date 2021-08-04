@@ -1,15 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Tú Resultado</ion-title>
-    <ion-buttons slot="start">
-      <ion-menu-button menu="main-menu"></ion-menu-button>
-    </ion-buttons>
+    <ion-title>Tú Resultado {{ data[1] }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let d of data">
+    <ion-item *ngFor="let d of data[0]">
       <ion-label>
         <h3>{{ d.nombreU }}</h3>
       </ion-label>

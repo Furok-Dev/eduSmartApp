@@ -13,11 +13,9 @@ export class ResultUniversityPage implements OnInit {
 
   ngOnInit() {
     this.data = JSON.parse(this.route.snapshot.paramMap.get('data'));
-    this.isDataLoaded = Object.keys(this.data).length < 1;
-    console.log(this.isDataLoaded);
-
-    // for (let i of this.data) {
-    //   console.log(i.nombreU);
-    // }
   }
+
+  // for (let i of this.data) {
+  //   console.log(i.nombreU);
+  // }
 }
