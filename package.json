@@ -1,7 +1,7 @@
 {
-  "name": "eduSmartApp",
+  "name": "EduSmart",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Furok's Tech",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
